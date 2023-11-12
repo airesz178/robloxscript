@@ -1,13 +1,13 @@
 repeat wait() until game:IsLoaded()
-local plr = game:GetService("Players").LocalPlayer
-local afk
-afk = hookmetamethod(game,"__namecall",function(self,...)
-	local method = getnamecallmethod()
-	if self == plr and method == "Idled" then
-		return
-	end
-	return afk(self,...)
-end)
+-- local plr = game:GetService("Players").LocalPlayer
+-- local afk
+-- afk = hookmetamethod(game,"__namecall",function(self,...)
+-- 	local method = getnamecallmethod()
+-- 	if self == plr and method == "Idled" then
+-- 		return
+-- 	end
+-- 	return afk(self,...)
+-- end)
 game:GetService("GuiService").ErrorMessageChanged:Connect(function()
 	game:GetService("GuiService"):ClearError()
 	game:GetService("StarterGui"):SetCore("SendNotification",{
