@@ -54,7 +54,7 @@ Tabs.Main:AddDropdown("Select Fishes", {
         Multi = false,
         Default = "Redworm",
         Callback = function(v)
-        selectfood = tostring(v)
+        selectfood = v
     end
     })
 Tabs.Main:AddToggle("Toggle Catch", {
