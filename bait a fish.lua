@@ -64,8 +64,14 @@ Tabs.Main:AddToggle("Toggle Catch", {
         getgenv().catch = get
         while getgenv().catch do
             wait()
-            if getgenerator():FindFirstChild("FoodModels") and getgenerator().FoodModels:FindFirstChild(selectfood) then
-                print("Yes")
+            for i,v in pairs(game:GetService("Workspace").Plots:GetDescendants()) do
+                if v.Name == game.Players.LocalPlayer.UserId.."Plot" then
+                    if v:FindFirstChild("Machines") and v.Machines:FindFirstChild("Generator") then
+                        if v.Machines.Generator[selectfood] then
+                            print("Yes")
+                        end
+                    end
+                end
             end
         end
     end
